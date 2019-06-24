@@ -7,10 +7,10 @@ class MicSpeechHearer:
   def adjustForNoise(self, duration=1):
     with self.mic as micy:
       self.hearer.adjust_for_ambient_noise(micy, duration=duration)
-  def listenAndHear(self, adjustForNoise=False, adjustDuration=1, runWhenAdjustedForNoise=null):
+  def listenAndHear(self, adjustForNoise=False, adjustDuration=1, runWhenAdjustedForNoise=""):
     if adjustForNoise:
       self.adjustForNoise(self, duration=adjustDuration)
-      if runWhenAdjustedForNoise != null:
+      if runWhenAdjustedForNoise != "":
         runWhenAdjustedForNoise()
     with self.mic as micy:
       audio = self.hearer.listen(micy)
