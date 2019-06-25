@@ -17,4 +17,5 @@ class MicSpeechHearer:
       try:
         return self.hearer.recognize_google(audio)
       except Exception as e:
+        print(e)
         return ""
