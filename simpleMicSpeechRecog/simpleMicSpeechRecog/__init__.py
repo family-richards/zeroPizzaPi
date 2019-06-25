@@ -15,8 +15,9 @@ class MicSpeechHearer:
     with self.mic as micy:
       audio = self.hearer.listen(micy)
       try:
-        return self.hearer.recognize_google(audio)
+        words = self.hearer.recognize_google(audio)
       except Exception as e:
         print("Exception:")
         print(e)
-        return ""
+        return
+      return words
